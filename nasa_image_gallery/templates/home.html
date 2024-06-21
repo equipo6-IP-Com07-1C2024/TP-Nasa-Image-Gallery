@@ -1,7 +1,7 @@
 {% extends 'header.html' %} {% block content %}
-<main>
+<main class="container">
     <h1 class="text-center">Galería de Imágenes de la NASA</h1>
-    <div class="d-flex justify-content-center" style="margin-bottom: 1%">
+    <div class="d-flex justify-content-center my-3 py-3 buscador">
         <!-- Buscador del sitio -->
         <form class="d-flex" action="{% url 'buscar' %}" method="POST">
             {% csrf_token %}
@@ -11,7 +11,7 @@
     </div>
 
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-2">
         {% for imagen in images %}
         <div class="col">
             <div class="card">
