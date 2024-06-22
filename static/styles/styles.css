@@ -2,6 +2,14 @@ body {
   color: #566787;
   background: #f4f2ee;
   font-family: "Roboto", sans-serif;
+  background-image: url("../img/fondo.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1 {
+  color: #e9e9e9;
 }
 
 main {
@@ -146,7 +154,7 @@ table.table td i {
 }
 
 .card {
-  height: 500px;
+  /* height: 500px; */
 
   & img {
     height: 220px;
@@ -156,17 +164,17 @@ table.table td i {
     height: 72px;
   }
 
-  & .card-text {
+  /* & .card-text {
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
+  } */
 }
 
 .buscador {
   position: sticky;
-  background: #f4f2eee0;
+  /* background: #f4f2eee0; */
+  backdrop-filter: blur(10px);
   top: 0;
   z-index: 9999;
 }
