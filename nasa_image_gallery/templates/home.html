@@ -26,7 +26,7 @@
           <h5 class="card-title">{{ imagen.title}}</h5>
           <p class="card-text">{{ imagen.description}}</p>
         </div>
-        {% if request.user.is_authenticated %} {% if imagen.title != "Image not found" %}
+        {% if request.user.is_authenticated %} {% if imagen.title != "Images not found" %}
         <div class="card-footer text-center">
           <form method="post" action="{% url 'agregar-favorito' %}">
             {% csrf_token %}
