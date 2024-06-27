@@ -11,3 +11,4 @@ soupsieve==2.5
 sqlparse==0.4.4
 tzdata==2023.4
 urllib3==2.2.0
+crispy_forms_tags
