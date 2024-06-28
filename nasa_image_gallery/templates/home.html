@@ -17,10 +17,12 @@
     </form>
   </div>
 
-  <div class="row row-cols-1 row-cols-md-3 g-2">
+  {% comment %} <div class="row row-cols-1 row-cols-md-3 g-2"> {% endcomment %}
+    <div class="multicolumnas">
     {% for imagen in images %}
-    <div class="col">
-      <div class="card">
+
+
+      <div class="card mb-3">
         <img src="{{ imagen.image_url}}" class="card-img-top" alt="imagen" />
         <div class="card-body">
           <h5 class="card-title">{{ imagen.title}}</h5>
@@ -67,7 +69,7 @@
         {% endif %}
         {% endif %}
       </div>
-    </div>
+
     {% endfor %}
   </div>
 </main>
