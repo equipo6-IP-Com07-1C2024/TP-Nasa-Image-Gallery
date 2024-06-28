@@ -42,6 +42,7 @@
               value="{{ imagen.image_url }}"
             />
             <input type="hidden" name="date" value="{{ imagen.date }}" />
+            <input type="hidden" name="query" value="{{ search_msg }}" />
 
             {% if imagen in favourite_list %}
             <button
