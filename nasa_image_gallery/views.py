@@ -1,5 +1,4 @@
 # capa de vista/presentación
-# si se necesita algún dato (lista, valor, etc), esta capa SIEMPRE se comunica con services_nasa_image_gallery.py
 
 from django.shortcuts import redirect, render
 from .layers.services import services_nasa_image_gallery
@@ -120,6 +119,7 @@ def register(request):
                 fail_silently=False,
             )
             messages.success(request, "¡Te has registrado exitosamente!")
+            
             login(request, user)
             
             return redirect('home')

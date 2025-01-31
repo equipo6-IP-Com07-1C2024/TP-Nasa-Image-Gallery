@@ -3,15 +3,32 @@
 from nasa_image_gallery.layers.generic.nasa_card import NASACard
 
 # usado cuando la info. viene de la API de la nasa, para transformarlo en una NASACard.
+# 
 def fromRequestIntoNASACard(object):
-    nasa_card = NASACard(
-                        title=object['data'][0]['title'],
-                        description=object['data'][0]['description'], 
-                        image_url=object['links'][0]['href'], 
-                        date=object['data'][0]['date_created'][:10]
-                )
+    data = object.get('data', [])
+    links = object.get('links', [])
 
-    return nasa_card
+    # Verificamos que 'data' no esté vacío y contenga 'title' y 'date_created'
+    if data and isinstance(data, list) and len(data) > 0:
+        title = data[0].get('title', 'Título no disponible')
+        description = data[0].get('description', 'Descripción no disponible')
+        date = data[0].get('date_created', '')[:10]  # Tomamos solo los primeros 10 caracteres
+    else:
+        title = 'Título no disponible'
+        description = 'Descripción no disponible'
+        date = ''
+
+    # Verificamos que 'links' tenga al menos un elemento y contenga 'href'
+    image_url = links[0].get('href', '') if links and isinstance(links, list) and len(links) > 0 else ''
+
+    return NASACard(
+        title=title,
+        description=description,
+        image_url=image_url,
+        date=date
+    )
+
+
 
 
 # usado cuando la info. viene del template, para transformarlo en una NASACard antes de guardarlo en la base de datos.
